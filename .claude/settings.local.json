@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.cloudflare.com)",
+      "Bash(npm create *)",
+      "PowerShell(fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression; fnm use 22; node --version; npm create cloudflare@latest -- my-portfolio --framework=vue --platform=pages --no-deploy 2>&1)",
+      "PowerShell($node22 = \"C:\\\\Users\\\\lelan\\\\AppData\\\\Roaming\\\\fnm\\\\node-versions\\\\v22.22.2\\\\installation\\\\node.exe\"; $npm22 = \"C:\\\\Users\\\\lelan\\\\AppData\\\\Roaming\\\\fnm\\\\node-versions\\\\v22.22.2\\\\installation\\\\npm.cmd\"; & $node22 --version; Set-Location \"C:\\\\Websites\\\\website-portfolios\"; & $node22 $npm22 create cloudflare@latest -- my-portfolio --framework=vue --platform=pages --no-deploy 2>&1)",
+      "PowerShell($node22dir = \"C:\\\\Users\\\\lelan\\\\AppData\\\\Roaming\\\\fnm\\\\node-versions\\\\v22.22.2\\\\installation\"; $env:PATH = \"$node22dir;$env:PATH\"; Set-Location \"C:\\\\Websites\\\\website-portfolios\"; node --version; npm create cloudflare@latest -- my-portfolio --framework=vue --platform=pages --no-deploy 2>&1)",
+      "Bash(sed -i 's/want to say hello —/want to say hello,/' /c/Websites/website-portfolios/my-portfolio/src/views/PortfolioView.vue)",
+      "Bash(sed -i 's/<p class=\"contact__sign\">— Leland Carter<\\\\/p>/<p class=\"contact__sign\">Leland Carter<\\\\/p>/' /c/Websites/website-portfolios/my-portfolio/src/views/PortfolioView.vue)"
+    ]
+  }
+}
