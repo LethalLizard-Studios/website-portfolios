@@ -10,6 +10,14 @@ const featured = computed(() => projects.find((p) => p.id === 'sanction'))
 const toggleMenu = () => { menuOpen.value = !menuOpen.value }
 const closeMenu  = () => { menuOpen.value = false }
 
+const typeClass = (type) => ({
+  'Video Game':          'badge--blue',
+  'Game Jam':            'badge--orange',
+  'Desktop Application': 'badge--cyan',
+  'Academic Project':    'badge--violet',
+  'VR Game':             'badge--pink',
+}[type] ?? 'badge--default')
+
 const onScroll = () => { scrolled.value = window.scrollY > 60 }
 onMounted(()  => window.addEventListener('scroll', onScroll, { passive: true }))
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
@@ -335,7 +343,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
                   :alt="project.images[0]?.alt ?? project.title"
                   loading="lazy" class="project-card__img"
                 />
-                <span class="project-card__type-badge">{{ project.type }}</span>
+                <span class="project-card__type-badge" :class="typeClass(project.type)">{{ project.type }}</span>
               </div>
               <div class="project-card__body">
                 <div class="project-card__top">
@@ -1024,9 +1032,16 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   border-radius: 9999px;
   background: rgba(17, 17, 18, 0.85);
   backdrop-filter: blur(8px);
-  color: var(--accent);
-  border: 1px solid var(--border-accent);
+  border: 1px solid;
 }
+
+/* type colours */
+.badge--blue    { color: #60a5fa; border-color: rgba(96, 165, 250, 0.3); }
+.badge--orange  { color: #fb923c; border-color: rgba(251, 146, 60,  0.3); }
+.badge--cyan    { color: #22d3ee; border-color: rgba(34, 211, 238,  0.3); }
+.badge--violet  { color: #a78bfa; border-color: rgba(167, 139, 250, 0.3); }
+.badge--pink    { color: #f472b6; border-color: rgba(244, 114, 182, 0.3); }
+.badge--default { color: var(--accent); border-color: var(--border-accent); }
 
 .project-card__body {
   padding: 1rem 1.25rem 0.5rem;
