@@ -18,6 +18,16 @@ const router = createRouter({
       name: 'portfolio',
       component: () => import('../views/PortfolioView.vue'),
     },
+    {
+      path: '/sanction',
+      name: 'sanction',
+      component: () => import('../views/SanctionView.vue'),
+    },
+    {
+      path: '/sea-of-thieves-guide',
+      name: 'sea-of-thieves-guide',
+      component: () => import('../views/SeaOfThievesView.vue'),
+    },
   ],
 })
 

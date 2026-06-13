@@ -23,6 +23,10 @@ html { scroll-behavior: smooth; }
   font-weight: normal;
 }
 
+:root {
+  --font-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--bg);

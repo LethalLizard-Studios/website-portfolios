@@ -5,22 +5,19 @@ import { RouterLink } from 'vue-router'
 <template>
   <main class="landing">
     <section class="hero">
-      <img class="hero__logo" src="/logo-lls.png" alt="LethalLizard Studios logo" />
-
-      <h1 class="hero__title">
-        LethalLizard<br /><span class="hero__title-accent">Studios</span>
-      </h1>
+      <img class="hero__logo" src="/lls-splash-logo.png" alt="LethalLizard Studios" />
 
       <p class="hero__description">
-        A <strong>Game Development &amp; Engineering</strong> studio with a focus on
-        <strong>Interactive Experiences</strong> — browse our games or shop for
-        high-quality golf simulator products.
+        Independent game studio out of Nova Scotia, Canada. Home of
+        <strong>SANCTION</strong>, plus a decade of games, tools, and the odd golf
+        simulator build.
       </p>
 
       <nav class="hero__nav" aria-label="Site sections">
-        <RouterLink class="btn btn--primary" to="/portfolio">Leland Carter Portfolio</RouterLink>
         <RouterLink class="btn btn--primary" to="/sanction">SANCTION</RouterLink>
+        <RouterLink class="btn btn--outline" to="/portfolio">Leland Carter Portfolio</RouterLink>
         <RouterLink class="btn btn--outline" to="/golf">Golf Products</RouterLink>
+        <RouterLink class="btn btn--outline" to="/sea-of-thieves-guide">SOT Guide</RouterLink>
       </nav>
     </section>
 
@@ -32,6 +29,8 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .landing {
+  --red: #cd4333;
+  --red-dark: #a83628;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,29 +44,18 @@ import { RouterLink } from 'vue-router'
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 1.5rem;
-  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  gap: 1.75rem;
 }
 
 .hero__logo {
-  width: clamp(80px, 16vw, 140px);
+  width: clamp(220px, 42vw, 380px);
   height: auto;
   object-fit: contain;
 }
 
-.hero__title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.hero__title-accent {
-  color: var(--accent);
-}
-
 .hero__description {
-  max-width: 540px;
+  max-width: 480px;
   font-size: clamp(1rem, 2.5vw, 1.125rem);
   color: var(--text-muted);
   line-height: 1.7;
@@ -84,7 +72,7 @@ import { RouterLink } from 'vue-router'
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .btn {
@@ -103,25 +91,25 @@ import { RouterLink } from 'vue-router'
 }
 
 .btn--primary {
-  background-color: var(--accent);
-  color: #111;
-  border: 2px solid var(--accent);
+  background-color: var(--red);
+  color: #fff;
+  border: 2px solid var(--red);
 }
 
 .btn--primary:hover {
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
+  background-color: var(--red-dark);
+  border-color: var(--red-dark);
 }
 
 .btn--outline {
   background-color: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  color: var(--red);
+  border: 2px solid var(--red);
 }
 
 .btn--outline:hover {
-  background-color: var(--accent);
-  color: #111;
+  background-color: var(--red);
+  color: #fff;
 }
 
 /* ── Footer ── */
