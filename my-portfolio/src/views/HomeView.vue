@@ -10,14 +10,13 @@ import { RouterLink } from 'vue-router'
       <p class="hero__description">
         Independent game studio out of Nova Scotia, Canada. Home of
         <strong>SANCTION</strong>, plus a decade of games, tools, and the odd golf
-        simulator build.
+        simulator product.
       </p>
 
       <nav class="hero__nav" aria-label="Site sections">
         <RouterLink class="btn btn--primary" to="/sanction">SANCTION</RouterLink>
         <RouterLink class="btn btn--outline" to="/portfolio">Leland Carter Portfolio</RouterLink>
-        <RouterLink class="btn btn--outline" to="/golf">Golf Products</RouterLink>
-        <RouterLink class="btn btn--outline" to="/sea-of-thieves-guide">SOT Guide</RouterLink>
+<RouterLink class="btn btn--outline" to="/sea-of-thieves-guide">SOT Guide</RouterLink>
       </nav>
     </section>
 

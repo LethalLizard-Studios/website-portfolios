@@ -10,7 +10,15 @@ const companies = {
   AF:  { name: "Athena's Fortune",  color: '#6aeda8', icon: "/sot/24px-Athena's_Fortune_icon.webp" },
   RB:  { name: "Reaper's Bones",    color: '#b22517', icon: '/sot/Reapers_Bones_icon.webp' },
   SL:  { name: "Smugglers' League", color: '#b9b065', icon: "/sot/24px-Smugglers'_League_icon.webp" },
-  ANY: { name: 'Most Companies',    color: '#d4d4d8' },
+  BB:  { name: 'Burning Blade',    color: '#e8701a', icon: '/sot/burning-blade-icon.webp' },
+  BR:  { name: 'Bilge Rats',       color: '#c4a63c', icon: '/sot/bilge-rats-icon.webp' },
+  ANY: { name: 'Most Companies', color: '#d4d4d8', icons: [
+    '/sot/24px-Gold_Hoarders_icon.webp',
+    '/sot/24px-Order_of_Souls_icon.webp',
+    '/sot/24px-Merchant_Alliance_icon.webp',
+    "/sot/76px-The_Hunter's_Call_icon.webp",
+    '/sot/Reapers_Bones_icon.webp',
+  ] },
 }
 
 const categories = [
@@ -20,17 +28,36 @@ const categories = [
     note: 'Dug up from voyages, found on islands and shipwrecks. Sold to the Gold Hoarders tent at any outpost.',
     items: [
       { name: "Castaway's Chest", value: '60 – 130', img: '/sot/castaways-chest.png' },
+      { name: "Sailor's Chest", value: '1,000 – 1,050', img: '/sot/sailors-chest.png' },
       { name: "Seafarer's Chest", value: '140 – 260', img: '/sot/seafarers-chest.png' },
       { name: "Marauder's Chest", value: '280 – 520', img: '/sot/marauders-chest.png' },
       { name: "Captain's Chest", value: '560 – 1,100', img: '/sot/captains-chest.png' },
+      { name: "Baron's Chest", value: '2,000 – 2,050', img: '/sot/barons-chest.png' },
+      { name: "Admiral's Chest", value: '1,525 – 1,575', img: '/sot/admirals-chest.png' },
+      { name: "Seamaster's Chest", value: '1,500 – 1,550', img: '/sot/seamasters-chest.png' },
+      { name: "King's Chest", value: '3,000 – 3,100', img: '/sot/kings-chest.png' },
+      { name: "Collector's Chest", value: '250 – 520', img: '/sot/collectors-chest.png' },
+      { name: "Coral Collector's Chest", value: 'varies', img: '/sot/coral-collectors-chest.png' },
+      { name: 'Chest of Fortune', value: '20,000', img: '/sot/chest-of-fortune.png' },
+      { name: 'Cradle of Virtue', value: '2,215 – 2,235', img: '/sot/cradle-of-virtue.png' },
+      { name: 'Crown of Flames', value: 'varies', img: '/sot/crown-of-flames.png' },
+      { name: 'Crown of Hope', value: '3,100 – 3,200', img: '/sot/crown-of-hope.png' },
+      { name: "Shipwrecked Castaway's Chest", value: 'varies', img: '/sot/shipwrecked-castaways-chest.png' },
+      { name: "Shipwrecked Seafarer's Chest", value: 'varies', img: '/sot/shipwrecked-seafarers-chest.png' },
+      { name: "Shipwrecked Marauder's Chest", value: 'varies', img: '/sot/shipwrecked-marauders-chest.png' },
+      { name: "Shipwrecked Captain's Chest", value: 'varies', img: '/sot/shipwrecked-captains-chest.png' },
       { name: "Coral Castaway's Chest", value: '105 – 228', img: '/sot/coral-castaways-chest.png' },
       { name: "Coral Seafarer's Chest", value: '245 – 455', img: '/sot/coral-seafarers-chest.png' },
       { name: "Coral Marauder's Chest", value: '490 – 910', img: '/sot/coral-marauders-chest.png' },
       { name: "Coral Captain's Chest", value: '980 – 1,925', img: '/sot/coral-captains-chest.png' },
       { name: "Ashen Castaway's Chest", value: '140 – 260', img: '/sot/ashen-castaways-chest.png' },
+      { name: "Ashen Sailor's Chest", value: '1,300 – 1,350', img: '/sot/ashen-sailors-chest.png' },
       { name: "Ashen Seafarer's Chest", value: '280 – 520', img: '/sot/ashen-seafarers-chest.png' },
       { name: "Ashen Marauder's Chest", value: '560 – 1,100', img: '/sot/ashen-marauders-chest.png' },
       { name: "Ashen Captain's Chest", value: '1,100 – 2,100', img: '/sot/ashen-captains-chest.png' },
+      { name: "Ashen Baron's Chest", value: '2,250 – 2,300', img: '/sot/ashen-barons-chest.png' },
+      { name: "Ashen Admiral's Chest", value: '1,825 – 1,875', img: '/sot/ashen-admirals-chest.png' },
+      { name: "Ashen Seamaster's Chest", value: '1,700 – 1,798', img: '/sot/ashen-seamasters-chest.png' },
       { name: 'Chest of the Damned', value: '1,000 – 1,160', img: '/sot/chest-of-the-damned.png' },
       { name: "Skeleton Captain's Chest", value: '1,150 – 1,550', img: '/sot/skeleton-captains-chest.png' },
       { name: 'Stronghold Chest', value: '1,500 – 3,000', img: '/sot/stronghold-chest.png' },
@@ -46,10 +73,18 @@ const categories = [
     company: 'GH',
     note: 'Small valuables found in barrels, caves and shipwrecks. Same pricing tiers as chests.',
     items: [
-      { name: 'Ancient Goblet / Bronze Secret-Keeper / Mysterious Vessel', value: '60 – 130', img: '/sot/ancient-goblet.png' },
-      { name: 'Silvered Cup / Elaborate Flagon / Decorative Coffer', value: '140 – 260', img: '/sot/silvered-cup.png' },
-      { name: 'Gilded Chalice / Ornate Carafe / Golden Reliquary', value: '280 – 520', img: '/sot/gilded-chalice.png' },
-      { name: 'Adorned Receptacle / Opulent Curio / Peculiar Relic', value: '560 – 1,100', img: '/sot/adorned-receptacle.png' },
+      { name: 'Ancient Goblet', value: '60 – 130', img: '/sot/ancient-goblet.png' },
+      { name: 'Bronze Secret-Keeper', value: '60 – 130', img: '/sot/bronze-secret-keeper.png' },
+      { name: 'Mysterious Vessel', value: '60 – 130', img: '/sot/mysterious-vessel.png' },
+      { name: 'Silvered Cup', value: '140 – 260', img: '/sot/silvered-cup.png' },
+      { name: 'Elaborate Flagon', value: '140 – 260', img: '/sot/elaborate-flagon.png' },
+      { name: 'Decorative Coffer', value: '140 – 260', img: '/sot/decorative-coffer.png' },
+      { name: 'Gilded Chalice', value: '280 – 520', img: '/sot/gilded-chalice.png' },
+      { name: 'Ornate Carafe', value: '280 – 520', img: '/sot/ornate-carafe.png' },
+      { name: 'Golden Reliquary', value: '280 – 520', img: '/sot/golden-reliquary.png' },
+      { name: 'Adorned Receptacle', value: '560 – 1,100', img: '/sot/adorned-receptacle.png' },
+      { name: 'Opulent Curio', value: '560 – 1,100', img: '/sot/opulent-curio.png' },
+      { name: 'Peculiar Relic', value: '560 – 1,100', img: '/sot/peculiar-relic.png' },
       { name: 'Mysterious Coral Vessel', value: '105 – 228', img: '/sot/mysterious-coral-vessel.png' },
       { name: 'Silvered Coral Cup', value: '245 – 455', img: '/sot/silvered-coral-cup.png' },
       { name: 'Golden Coral Reliquary', value: '490 – 910', img: '/sot/golden-coral-reliquary.png' },
@@ -58,8 +93,12 @@ const categories = [
       { name: 'Brimstone Casket', value: '280 – 520', img: '/sot/brimstone-casket.png' },
       { name: "Devil's Remnant", value: '560 – 1,100', img: '/sot/devils-remnant.png' },
       { name: "Magma's Grail", value: '1,100 – 2,100', img: '/sot/magmas-grail.png' },
-      { name: 'Artefacts of the Ashen Curse (Chalice / Keeper / Grail)', value: '140 – 260', img: '/sot/ashen-curse-artefacts.png' },
+      { name: 'Chalice of the Ashen Curse', value: '140 – 260', img: '/sot/chalice-of-the-ashen-curse.png' },
+      { name: 'Keeper of the Ashen Curse', value: '140 – 260', img: '/sot/keeper-of-the-ashen-curse.png' },
+      { name: 'Grail of the Ashen Curse', value: '140 – 260', img: '/sot/grail-of-the-ashen-curse.png' },
       { name: 'Vestige of Power', value: '1,500 – 1,750', img: '/sot/vestige-of-power.png' },
+      { name: 'Ashes of Ruin', value: '2,250 – 2,300', img: '/sot/ashes-of-ruin.png' },
+      { name: 'Vessel of Fire', value: '3,300 – 3,350', img: '/sot/vessel-of-fire.png' },
     ],
   },
   {
@@ -77,9 +116,10 @@ const categories = [
     company: 'GH',
     note: 'Earned from Wayfinder voyages. Sell the key, or open the vault and keep what is inside.',
     items: [
-      { name: 'Stone Vault Key', value: '1,200 – 1,500', img: '/sot/stone-vault-key.png' },
-      { name: 'Silver Vault Key', value: '2,300 – 2,400', img: '/sot/silver-vault-key.png' },
-      { name: 'Gold Vault Key', value: '3,600 – 3,750', img: '/sot/gold-vault-key.png' },
+      { name: 'Stone Vault Key', value: '1,200 – 1,500', use: 'Opens Stone Treasure Vault', img: '/sot/stone-vault-key.png' },
+      { name: 'Silver Vault Key', value: '2,300 – 2,400', use: 'Opens Silver Treasure Vault', img: '/sot/silver-vault-key.png' },
+      { name: 'Gold Vault Key', value: '3,600 – 3,750', use: 'Opens Gold Treasure Vault', img: '/sot/gold-vault-key.png' },
+      { name: 'Ashen Reaches Gold Key', value: 'varies', use: 'Opens Ashen Reaches Vault', img: '/sot/ashen-reaches-gold-key.png' },
     ],
   },
   {
@@ -105,6 +145,18 @@ const categories = [
       { name: 'Ashen Winds Skull', value: '4,000 – 10,000', img: '/sot/ashen-winds-skull.png' },
       { name: 'Skull of the Damned', value: '1,050 – 1,250', img: '/sot/skull-of-the-damned.png' },
       { name: 'Captain Skull of the Damned', value: '1,700 – 2,950', img: '/sot/captain-skull-of-the-damned.png' },
+    ],
+  },
+  {
+    title: 'Dark Relics',
+    company: 'OOS',
+    note: 'Powerful magical artefacts from Dark Relic Voyages. Sold to the Order of Souls. Some also serve ritual purposes — Ritual Skulls activate the Fort of the Damned.',
+    items: [
+      { name: 'Bewitching Doll', value: '3,500', img: '/sot/bewitching-doll.png' },
+      { name: 'Enchantment Vessel', value: '3,770 – 5,460', img: '/sot/enchantment-vessel.png' },
+      { name: 'Evil Eye', value: '3,715 – 4,995', img: '/sot/evil-eye.png' },
+      { name: 'Hexing Skull', value: '4,200 – 5,405', img: '/sot/hexing-skull.png' },
+      { name: 'Mutinous Effigy', value: '3,510 – 5,205', img: '/sot/mutinous-effigy.png' },
     ],
   },
   {
@@ -136,11 +188,11 @@ const categories = [
       { name: 'Storage Crate of the Damned', value: '2,100 – 5,400', img: '/sot/storage-crate-of-the-damned.png' },
       { name: 'Crate of Immaculate Diamonds', value: '3,000 – 3,100', img: '/sot/crate-of-immaculate-diamonds.png' },
       { name: 'Ashes of the Damned', value: '1,150 – 1,400', img: '/sot/ashes-of-the-damned.png' },
-      { name: 'Merchant Cabin Key', value: 'varies', img: '/sot/merchant-cabin-key.png' },
-      { name: 'Coffer of Aged Grog', value: '260 – 470', img: '/sot/coffer-of-aged-grog.png' },
-      { name: 'Coffer of Antiquated Coffee', value: '100 – 200', img: '/sot/coffer-of-antiquated-coffee.png' },
+      { name: 'Merchant Cabin Key', value: 'varies', use: 'Opens Merchant Ship Cabin', img: '/sot/merchant-cabin-key.png' },
+      { name: 'Coffer of Aged Grog', value: '100 – 200', img: '/sot/coffer-of-aged-grog.png' },
+      { name: 'Coffer of Antiquated Coffee', value: '260 – 470', img: '/sot/coffer-of-antiquated-coffee.png' },
       { name: 'Coffer of Forgotten Jewels', value: '1,100 – 1,900', img: '/sot/coffer-of-forgotten-jewels.png' },
-      { name: 'Coffer of Timeworn Minerals', value: '500 – 1,000', img: '/sot/coffer-of-timeworn-minerals.png' },
+      { name: 'Coffer of Timeworn Minerals', value: 'varies', img: '/sot/coffer-of-timeworn-minerals.png' },
     ],
   },
   {
@@ -200,8 +252,8 @@ const categories = [
     company: 'MA',
     note: 'Sold to the Merchant Alliance, worth far more when commissioned.',
     items: [
-      { name: 'Gunpowder Barrel', value: '100 – 200 / 1,000', img: '/sot/gunpowder-barrel.png' },
-      { name: 'Stronghold Gunpowder Barrel', value: '2,750 – 6,000', img: '/sot/stronghold-gunpowder-barrel.png' },
+      { name: 'Gunpowder Barrel', value: '100 – 200 / 1,000', use: 'Explosive Weapon', img: '/sot/gunpowder-barrel.png' },
+      { name: 'Stronghold Gunpowder Barrel', value: '2,750 – 6,000', use: 'Explosive Weapon', img: '/sot/stronghold-gunpowder-barrel.png' },
     ],
   },
   {
@@ -276,7 +328,10 @@ const categories = [
     company: 'HC',
     note: 'Raw meat cannot be sold. Cook it on a stove first.',
     items: [
-      { name: 'Cooked Chicken / Pork / Snake / Shark', value: '45', img: '/sot/cooked-meat.png' },
+      { name: 'Cooked Chicken', value: '45', img: '/sot/cooked-chicken.png' },
+      { name: 'Cooked Pork', value: '45', img: '/sot/cooked-pork.png' },
+      { name: 'Cooked Snake', value: '45', img: '/sot/cooked-snake.png' },
+      { name: 'Cooked Shark', value: '45', img: '/sot/cooked-shark.png' },
       { name: 'Cooked Megalodon Meat', value: '450', img: '/sot/megalodon-meat.png' },
       { name: 'Cooked Kraken Meat', value: '450', img: '/sot/kraken-meat.png' },
     ],
@@ -286,18 +341,18 @@ const categories = [
     company: 'HC',
     note: "Miscellaneous goods sold to The Hunter's Call at any seapost.",
     items: [
-      { name: 'Fish Bones', value: 'varies', img: '/sot/fish-bones.png' },
-      { name: 'Old Boot', value: 'varies', img: '/sot/old-boot.png' },
-      { name: 'Bait Crate', value: 'varies', img: '/sot/bait-crate.png' },
-      { name: 'Irresistible Bait Pack', value: 'varies', img: '/sot/irresistible-bait-pack.png' },
+      { name: 'Fish Bones', value: '10', img: '/sot/fish-bones.png' },
+      { name: 'Old Boot', value: '10', img: '/sot/old-boot.png' },
+      { name: 'Bait Crate', value: '900 – 1,100', img: '/sot/bait-crate.png' },
+      { name: 'Irresistible Bait Pack', value: '100 – 200', img: '/sot/irresistible-bait-pack.png' },
       { name: 'Finest Fishing Hook Pack', value: 'varies', img: '/sot/finest-fishing-hook-pack.png' },
-      { name: 'Hunting Spear Tip Pack', value: 'varies', img: '/sot/hunting-spear-tip-pack.png' },
-      { name: 'Kraken Eye', value: 'varies', img: '/sot/kraken-eye.png' },
-      { name: 'Monstrous Kraken Eye', value: 'varies', img: '/sot/monstrous-kraken-eye.png' },
-      { name: 'Crate of Shark\'s Teeth', value: 'varies', img: '/sot/crate-of-sharks-teeth.png' },
-      { name: 'Crate of Curious Fish Scales', value: 'varies', img: '/sot/crate-of-curious-fish-scales.png' },
-      { name: 'Crate of Precious Pearls', value: 'varies', img: '/sot/crate-of-precious-pearls.png' },
-      { name: 'Crate of Kraken Tentacles', value: 'varies', img: '/sot/crate-of-kraken-tentacles.png' },
+      { name: 'Hunting Spear Tip Pack', value: '500 – 1,000', img: '/sot/hunting-spear-tip-pack.png' },
+      { name: 'Kraken Eye', value: '5,000', img: '/sot/kraken-eye.png' },
+      { name: 'Monstrous Kraken Eye', value: '15,000', img: '/sot/monstrous-kraken-eye.png' },
+      { name: 'Crate of Shark\'s Teeth', value: '1,500 – 1,550', img: '/sot/crate-of-sharks-teeth.png' },
+      { name: 'Crate of Curious Fish Scales', value: '1,000 – 1,050', img: '/sot/crate-of-curious-fish-scales.png' },
+      { name: 'Crate of Precious Pearls', value: '2,000 – 2,050', img: '/sot/crate-of-precious-pearls.png' },
+      { name: 'Crate of Kraken Tentacles', value: '3,000 – 3,100', img: '/sot/crate-of-kraken-tentacles.png' },
       { name: 'Barnacled Dread Scale', value: 'varies', img: '/sot/barnacled-dread-scale.png' },
       { name: 'Barnacled Dread Tooth', value: 'varies', img: '/sot/barnacled-dread-tooth.png' },
       { name: 'Barnacled Dread Treasured Scale', value: 'varies', img: '/sot/barnacled-dread-treasured-scale.png' },
@@ -311,17 +366,17 @@ const categories = [
     items: [
       { name: 'Chest of Legends', value: '8,600 – 11,000', img: '/sot/chest-of-legends.png' },
       { name: 'Ashen Chest of Legends', value: '12,900 – 16,500 (1.5x regular)', img: '/sot/ashen-chest-of-legends.png' },
-      { name: "Athena's Relic", value: 'varies', img: '/sot/athenas-relic.png' },
-      { name: 'Chalice of Ancient Fortune', value: 'varies', img: '/sot/chalice-of-ancient-fortune.png' },
-      { name: 'Legendary Fortune Keeper', value: 'varies', img: '/sot/legendary-fortune-keeper.png' },
-      { name: 'Artifact of Legendary Hunger', value: 'varies', img: '/sot/artifact-of-legendary-hunger.png' },
-      { name: 'Jar of Athena\'s Incense', value: 'varies', img: '/sot/jar-of-athenas-incense.png' },
-      { name: 'Offering of Legendary Goods', value: 'varies', img: '/sot/offering-of-legendary-goods.png' },
-      { name: 'Crate of Legendary Voyages', value: 'varies', img: '/sot/crate-of-legendary-voyages.png' },
-      { name: 'Keg of Ancient Black Powder', value: 'varies', img: '/sot/keg-of-ancient-black-powder.png' },
-      { name: 'Cognac of Fortune', value: 'varies', img: '/sot/cognac-of-fortune.png' },
-      { name: 'Flora of Fortune', value: 'varies', img: '/sot/flora-of-fortune.png' },
-      { name: 'Silks of Fortune', value: 'varies', img: '/sot/silks-of-fortune.png' },
+      { name: "Athena's Relic", value: '3,550 – 3,800', img: '/sot/athenas-relic.png' },
+      { name: 'Chalice of Ancient Fortune', value: '570 – 620', img: '/sot/chalice-of-ancient-fortune.png' },
+      { name: 'Legendary Fortune Keeper', value: '2,500 – 2,750', img: '/sot/legendary-fortune-keeper.png' },
+      { name: 'Artifact of Legendary Hunger', value: '2,500 – 2,750', img: '/sot/artifact-of-legendary-hunger.png' },
+      { name: 'Jar of Athena\'s Incense', value: '1,400 – 1,550', img: '/sot/jar-of-athenas-incense.png' },
+      { name: 'Offering of Legendary Goods', value: '2,500 – 2,750', img: '/sot/offering-of-legendary-goods.png' },
+      { name: 'Crate of Legendary Voyages', value: '2,100 – 2,200', img: '/sot/crate-of-legendary-voyages.png' },
+      { name: 'Keg of Ancient Black Powder', value: '3,000 – 5,000', use: 'Explosive Weapon', img: '/sot/keg-of-ancient-black-powder.png' },
+      { name: 'Cognac of Fortune', value: 'up to 10,000', img: '/sot/cognac-of-fortune.png' },
+      { name: 'Flora of Fortune', value: 'up to 10,000', img: '/sot/flora-of-fortune.png' },
+      { name: 'Silks of Fortune', value: 'up to 10,000', img: '/sot/silks-of-fortune.png' },
       { name: 'Cognac From Distant Horizons', value: 'varies', img: '/sot/cognac-from-distant-horizons.png' },
       { name: 'Flora From Distant Horizons', value: 'varies', img: '/sot/flora-from-distant-horizons.png' },
       { name: 'Silks From Distant Horizons', value: 'varies', img: '/sot/silks-from-distant-horizons.png' },
@@ -336,7 +391,7 @@ const categories = [
       { name: "Reaper's Bounty", value: '10,000', img: '/sot/reapers-bounty.png' },
       { name: 'Humble Gift', value: '3,500 – 5,000', img: '/sot/humble-gift.png' },
       { name: 'Generous Gift', value: '8,000 – 10,000', img: '/sot/generous-gift.png' },
-      { name: "Captain's Log", value: 'varies', img: '/sot/captains-log.png' },
+      { name: "Captain's Log", value: '300 – 25,000', use: 'Records Crew Voyage History', img: '/sot/captains-log.png' },
       { name: "Reaper's Bones Emissary Flag", value: '5', currency: 'doubloon', img: '/sot/reapers-bones-emissary-flag.png' },
       { name: "Athena's Fortune Emissary Flag", value: '15', currency: 'doubloon', img: '/sot/athenas-fortune-emissary-flag.png' },
     ],
@@ -346,8 +401,11 @@ const categories = [
     company: 'SL',
     note: "Season 17 contraband from Smugglers' Run voyages, caches and shipwrecks. Refused by every other company, sold only at the six Smugglers' Hideouts. Big gold, but no reputation or emissary value.",
     items: [
-      { name: 'Black Powder Barrel', value: '19,500', img: '/sot/black-powder-barrel.png' },
-      { name: "Smugglers' Chronicle (Gilded Fox / Shadow Current / Wolf in Winter / Sapphire Steel)", value: '1,000', img: '/sot/smugglers-chronicle.png' },
+      { name: 'Black Powder Barrel', value: '19,500', use: 'Explosive Weapon', img: '/sot/black-powder-barrel.png' },
+      { name: "Gilded Fox Chronicle", value: '1,000', img: '/sot/gilded-fox-chronicle.png' },
+      { name: "Shadow Current Chronicle", value: '1,000', img: '/sot/shadow-current-chronicle.png' },
+      { name: "Wolf in Winter Chronicle", value: '1,000', img: '/sot/wolf-in-winter-chronicle.png' },
+      { name: "Sapphire Steel Chronicle", value: '1,000', img: '/sot/sapphire-steel-chronicle.png' },
       { name: 'Crate of Floral Fate Rum', value: '1,400 – 2,600', img: '/sot/crate-of-floral-fate-rum.png' },
       { name: 'Crate of Dark Demise Rum', value: '8,400 – 9,600', img: '/sot/crate-of-dark-demise-rum.png' },
       { name: 'Crate of Golden Greed Rum', value: '12,400 – 13,600', img: '/sot/crate-of-golden-greed-rum.png' },
@@ -357,6 +415,23 @@ const categories = [
       { name: "Collector's Painting", value: '2,750 – 175,000 (heist target)', img: '/sot/collectors-painting.png' },
       { name: 'Bilge Rats Doubloon Crate', value: '200', currency: 'doubloon', img: '/sot/bilge-rats-doubloon-crate.png' },
       { name: 'Secret Shipment Crate', value: '25', currency: 'doubloon', img: '/sot/secret-shipment-crate.png' },
+    ],
+  },
+  {
+    title: 'Miscellaneous',
+    company: 'ANY',
+    note: 'Unique items with special sell conditions or multiple buyers.',
+    items: [
+      { name: 'Ammo Crate', value: 'varies', use: 'Resupply Ammo', img: '/sot/ammo-crate.png' },
+      { name: 'Storage Crate', value: 'varies', use: 'Store Items on Ship', img: '/sot/storage-crate.png' },
+      { name: 'Trident', value: 'varies', use: 'Underwater Weapon', img: '/sot/trident.png' },
+      { name: 'Horn of Fair Winds', value: 'varies', use: 'Summons Favorable Wind', img: '/sot/horn-of-fair-winds.png' },
+      { name: 'Chest of Siren Song', value: 'varies', use: 'Opened with Key of Siren Song', img: '/sot/chest-of-siren-song.png' },
+      { name: 'Key of Siren Song', value: 'varies', use: 'Opens Chest of Siren Song', img: '/sot/key-of-siren-song.png' },
+      { name: 'Skull of Siren Song', value: 'varies', img: '/sot/skull-of-siren-song.png' },
+      { name: 'Sapphire Breath of the Sea', value: 'varies', img: '/sot/sapphire-breath-of-the-sea.png' },
+      { name: 'Emerald Breath of the Sea', value: 'varies', img: '/sot/emerald-breath-of-the-sea.png' },
+      { name: 'Ruby Breath of the Sea', value: 'varies', img: '/sot/ruby-breath-of-the-sea.png' },
     ],
   },
   {
@@ -370,6 +445,34 @@ const categories = [
       { name: 'Sapphire Siren Gem', value: '1,000', img: '/sot/sapphire-siren-gem.png' },
       { name: 'Emerald Siren Gem', value: '1,500', img: '/sot/emerald-siren-gem.png' },
       { name: 'Ruby Siren Gem', value: '2,000', img: '/sot/ruby-siren-gem.png' },
+    ],
+  },
+  {
+    title: 'Burning Blade',
+    company: 'BB',
+    note: 'Rare drops from the Burning Blade world event. The Obsidian Ashen Winds Skull sells to OOS or Reaper\'s Bones; the Orb of Secrets to most companies. (Sword of Souls is a cosmetic cutlass skin — it cannot be sold.)',
+    items: [
+      { name: 'Obsidian Ashen Winds Skull', value: '2,500', use: 'Ashen Winds Weapon', img: '/sot/obsidian-ashen-winds-skull.png' },
+      { name: 'Orb of Secrets', value: '20,000', img: '/sot/orb-of-secrets.png' },
+    ],
+  },
+  {
+    title: 'Bilge Rats',
+    company: 'BR',
+    note: 'Exchanged with Larinna (Bilge Rats) at any tavern. Tomes and Ritual Skulls sell for Gold; Ashen Chests, Keys, and Rag & Bone Crates trade for Doubloons.',
+    items: [
+      { name: 'Ritual Skull', value: '5,500', use: 'Fort of the Damned', img: '/sot/ritual-skull.png' },
+      { name: 'Tome of Curses', value: '5,500', img: '/sot/tome-of-curses.png' },
+      { name: 'Tome of Fire', value: '5,500', img: '/sot/tome-of-fire.png' },
+      { name: 'Tome of Power', value: '5,500', img: '/sot/tome-of-power.png' },
+      { name: 'Tome of Resurrection', value: '5,500', img: '/sot/tome-of-resurrection.png' },
+      { name: 'Ashen Chest', value: '5', currency: 'doubloon', use: 'Requires Ashen Key', img: '/sot/ashen-chest.png' },
+      { name: 'Ashen Key', value: '5', currency: 'doubloon', use: 'Opens Ashen Chest', img: '/sot/ashen-key.png' },
+      { name: 'Box of Wondrous Secrets', value: 'varies', img: '/sot/box-of-wondrous-secrets.png' },
+      { name: 'Green Rag and Bones Crate', value: '5', currency: 'doubloon', img: '/sot/green-rag-and-bones-crate.png' },
+      { name: 'Purple Rag and Bones Crate', value: '5', currency: 'doubloon', img: '/sot/purple-rag-and-bones-crate.png' },
+      { name: 'Red Rag and Bones Crate', value: '5', currency: 'doubloon', img: '/sot/red-rag-and-bones-crate.png' },
+      { name: 'Yellow Rag and Bones Crate', value: '5', currency: 'doubloon', img: '/sot/yellow-rag-and-bones-crate.png' },
     ],
   },
 ]
@@ -475,7 +578,10 @@ const filtered = computed(() => {
           :style="{ '--chip-color': co.color }"
           @click="activeCompany = key"
         >
-          <img v-if="co.icon" class="chip__icon" :src="co.icon" alt="" />
+          <span v-if="co.icons" class="chip__icons">
+            <img v-for="ico in co.icons" :key="ico" class="chip__icon" :src="ico" alt="" />
+          </span>
+          <img v-else-if="co.icon" class="chip__icon" :src="co.icon" alt="" />
           {{ co.name }}
         </button>
       </div>
@@ -487,23 +593,35 @@ const filtered = computed(() => {
           <img class="items__icon" :src="item.img" alt="" loading="lazy" />
           <span class="items__name">{{ item.name }}</span>
           <span v-if="item.note" class="items__note">{{ item.note }}</span>
-          <span class="items__value" :class="{ 'items__value--doubloon': item.currency === 'doubloon' }">
-            {{ item.price }}
-            <img
-              class="items__coin"
-              :src="item.currency === 'doubloon' ? '/Doubloon.webp' : '/Gold.webp'"
-              :alt="item.currency === 'doubloon' ? 'Doubloons' : 'Gold'"
-            />
-          </span>
-          <span class="items__company" :style="{ color: companies[item.company].color }">
-            <img
-              v-if="companies[item.company].icon"
-              class="items__company-icon"
-              :src="companies[item.company].icon"
-              alt=""
-            />
-            {{ companies[item.company].name }}
-          </span>
+          <div class="items__sell">
+            <span v-if="item.use" class="items__use">{{ item.use }}</span>
+            <span class="items__value" :class="{ 'items__value--doubloon': item.currency === 'doubloon' }">
+              {{ item.price }}
+              <img
+                class="items__coin"
+                :src="item.currency === 'doubloon' ? '/Doubloon.webp' : '/Gold.webp'"
+                :alt="item.currency === 'doubloon' ? 'Doubloons' : 'Gold'"
+              />
+            </span>
+            <span class="items__company" :style="{ color: companies[item.company].color }">
+              <span v-if="companies[item.company].icons" class="items__company-icons">
+                <img
+                  v-for="ico in companies[item.company].icons"
+                  :key="ico"
+                  class="items__company-icon"
+                  :src="ico"
+                  alt=""
+                />
+              </span>
+              <img
+                v-else-if="companies[item.company].icon"
+                class="items__company-icon"
+                :src="companies[item.company].icon"
+                alt=""
+              />
+              {{ companies[item.company].name }}
+            </span>
+          </div>
         </li>
       </ul>
 
@@ -679,6 +797,21 @@ const filtered = computed(() => {
   align-items: center;
 }
 
+.items__sell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.items__use {
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
 .items__value {
   display: inline-flex;
   align-items: center;
@@ -717,6 +850,26 @@ const filtered = computed(() => {
   width: 1.3em;
   height: 1.3em;
   object-fit: contain;
+}
+
+.items__company-icons {
+  display: inline-flex;
+  gap: 0.1em;
+}
+
+.items__company-icons .items__company-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.chip__icons {
+  display: inline-flex;
+  gap: 0.1em;
+}
+
+.chip__icons .chip__icon {
+  width: 0.9em;
+  height: 0.9em;
 }
 
 .catalog__empty {
